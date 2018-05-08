@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69afda3b709b02b4a8d20c2788ec3ee1, type: 3}
+  m_Name: KeyText
+  m_EditorClassIdentifier: 
+  Keys:
+  - T01
+  - T02
+  - T03
+  - T04
+  - T05
+  - T06
+  - T07
+  - T08
+  - T09
+  - T10
+  - T11
+  - T12
+  - T13
+  - T14
+  - T15
+  Values:
+  - "\u8FD9\u91CC\u662F\u5267\u672C\u7CFB\u7EDF\u7684\u6D4B\u8BD5"
+  - "\u54E6"
+  - "\u90A3\u6210\u529F\u4E86\u5417\uFF1F"
+  - emmmmmmm...
+  - "\u6210\u529F\u4E86"
+  - "\u5927\u6982\u6210\u529F\u4E86"
+  - "\u5931\u8D25\u4E86"
+  - "\u90A3\u662F\u6210\u529F\u4E86\u8FD8\u662F\u6CA1\u6210\u529F\uFF1F"
+  - "\u6069\uFF0C\u6210\u529F\u4E86"
+  - "...\u4E0D\uFF0C\u6211\u89C9\u5F97\u662F\u5931\u8D25\u4E86"
+  - "\u592A\u597D\u4E86\uFF0C\u4ECA\u665A\u52A0\u9E21\u817F\u5427\uFF01"
+  - "\u90A3\u8BF7\u7EE7\u7EED\u52AA\u529B\u5427"
+  - '......'
+  - "\u5149\u9634\u4F3C\u7BAD\u65E5\u6708\u5982\u68AD"
+  - "\u4E8E\u662F\u53C8\u8FC7\u4E86\u51E0\u5929"
+  description: 

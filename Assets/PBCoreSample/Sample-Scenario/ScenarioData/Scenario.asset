@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913f55c3c766b6044a882e6d800198c1, type: 3}
+  m_Name: Scenario
+  m_EditorClassIdentifier: 
+  description: 
+  defaultLocalText: {fileID: 0}
+  dialogues:
+  - m_key: 
+    characters:
+    - character: {fileID: 11400000, guid: cc777e8934f154c4e9ab281461e0b125, type: 2}
+      portaritKey: default
+      isSpeaker: 1
+    - character: {fileID: 11400000, guid: b807a083f0f751a419e1bbc7984e71ce, type: 2}
+      portaritKey: default
+      isSpeaker: 0
+    text:
+      localText: {fileID: 0}
+      useTextReplacer: 0
+      key: "\u8FD9\u662F\u5267\u672C\u529F\u80FD\u7684\u6D4B\u8BD5"
+    selections: []
+    commands: []
+  - m_key: 
+    characters:
+    - character: {fileID: 11400000, guid: cc777e8934f154c4e9ab281461e0b125, type: 2}
+      portaritKey: default
+      isSpeaker: 0
+    - character: {fileID: 11400000, guid: b807a083f0f751a419e1bbc7984e71ce, type: 2}
+      portaritKey: default
+      isSpeaker: 1
+    text:
+      localText: {fileID: 0}
+      useTextReplacer: 0
+      key: "\u54E6\uFF0C\u662F\u5417\uFF1F"
+    selections: []
+    commands: []
+  - m_key: 
+    characters:
+    - character: {fileID: 11400000, guid: cc777e8934f154c4e9ab281461e0b125, type: 2}
+      portaritKey: default
+      isSpeaker: 0
+    - character: {fileID: 11400000, guid: b807a083f0f751a419e1bbc7984e71ce, type: 2}
+      portaritKey: default
+      isSpeaker: 1
+    text:
+      localText: {fileID: 0}
+      useTextReplacer: 0
+      key: "\u90A3\u5B83\u6210\u529F\u4E86\u5417\uFF1F"
+    selections: []
+    commands: []
+  - m_key: 
+    characters:
+    - character: {fileID: 11400000, guid: cc777e8934f154c4e9ab281461e0b125, type: 2}
+      portaritKey: default
+      isSpeaker: 1
+    - character: {fileID: 11400000, guid: b807a083f0f751a419e1bbc7984e71ce, type: 2}
+      portaritKey: default
+      isSpeaker: 0
+    text:
+      localText: {fileID: 0}
+      useTextReplacer: 0
+      key: emmmmm.........
+    selections:
+    - text:
+        localText: {fileID: 0}
+        useTextReplacer: 0
+        key: "\u662F\u7684\uFF0C\u6210\u529F\u4E86"
+      nextScenario: {fileID: 11400000, guid: 00e101c9cd2915145a97cd57f62af7ea, type: 2}
+    - text:
+        localText: {fileID: 0}
+        useTextReplacer: 0
+        key: "\u5E94\u8BE5\u662F\u6210\u529F\u4E86"
+      nextScenario: {fileID: 11400000, guid: 5c1c33e34e749574389dc910bbe95abc, type: 2}
+    - text:
+        localText: {fileID: 0}
+        useTextReplacer: 0
+        key: "\u4F30\u8BA1\u662F\u5931\u8D25\u4E86"
+      nextScenario: {fileID: 11400000, guid: 211278aae42d47f4984d3fba02d63d99, type: 2}
+    commands: []
+  nextScenario: {fileID: 11400000, guid: 211278aae42d47f4984d3fba02d63d99, type: 2}

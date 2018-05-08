@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b2e8c1f890871498bf8903c5179244, type: 3}
+  m_Name: SCharacter1
+  m_EditorClassIdentifier: 
+  description: 
+  localText: {fileID: 0}
+  useTextReplacer: 0
+  charaName: PB
+  defaultPortrait: {fileID: 21300000, guid: aa1c6ede96f6d1d439c066dd45ac0902, type: 3}
+  portraits: {fileID: 11400000, guid: e246ab345979a244eabc94cbc5cd114a, type: 2}

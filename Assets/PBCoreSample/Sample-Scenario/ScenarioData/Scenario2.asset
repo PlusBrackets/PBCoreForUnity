@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913f55c3c766b6044a882e6d800198c1, type: 3}
+  m_Name: Scenario2
+  m_EditorClassIdentifier: 
+  description: "\u5931\u8D25\u5267\u672C"
+  defaultLocalText: {fileID: 0}
+  dialogues:
+  - m_key: 
+    characters:
+    - character: {fileID: 11400000, guid: cc777e8934f154c4e9ab281461e0b125, type: 2}
+      portaritKey: default
+      isSpeaker: 0
+    - character: {fileID: 11400000, guid: b807a083f0f751a419e1bbc7984e71ce, type: 2}
+      portaritKey: default
+      isSpeaker: 1
+    text:
+      localText: {fileID: 0}
+      useTextReplacer: 0
+      key: "\u522B\u6C14\u9981\uFF0C\u7EE7\u7EED\u52AA\u529B\u5427\uFF01"
+    selections: []
+    commands: []
+  nextScenario: {fileID: 11400000, guid: d7cbc1f674323d946af295de67180065, type: 2}

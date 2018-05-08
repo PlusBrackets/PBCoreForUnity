@@ -1,0 +1,11 @@
+ManifestFileVersion: 0
+CRC: 2925609047
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: cubes
+      Dependencies:
+        Dependency_0: mats
+    Info_1:
+      Name: mats
+      Dependencies: {}
