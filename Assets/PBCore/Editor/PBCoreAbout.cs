@@ -9,7 +9,7 @@ namespace PBCore.CEditor
     public class PBCoreAbout : EditorWindow
     {
         private const string ver = "v0.6.9";
-        private static Rect windowRect = new Rect(500, 400, 400, 280);
+        private static Rect windowRect = new Rect(Screen.width/2-200, Screen.height/2+40, 400, 80);
 
         [MenuItem("PBCore/About",false,20000)]
         static void ShowAboutWin()
@@ -20,7 +20,7 @@ namespace PBCore.CEditor
 
         private void OnGUI()
         {
-            EditorGUI.LabelField(new Rect(windowRect.width/2-130,10,260,20),"A simple framework to make a simple game");
+            //EditorGUI.LabelField(new Rect(windowRect.width/2-200,10,260,20),"some tools");
 
             
 
