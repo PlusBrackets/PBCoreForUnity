@@ -48,6 +48,9 @@ namespace PBCore.AssetBundleUtil
 
         static List<string> m_DownloadingBundles = new List<string>();
         static List<AssetBundleDownLoadOperation> m_DownloadingOperations = new List<AssetBundleDownLoadOperation>();
+        /// <summary>
+        /// 正在进程中的operations
+        /// </summary>
         static List<AssetBundleBaiscOperation> m_InProgressLoadOpertaions = new List<AssetBundleBaiscOperation>();
 
 
@@ -69,7 +72,9 @@ namespace PBCore.AssetBundleUtil
         /// 是否已经初始化
         /// </summary>
         public static bool isInitialized { get { return assetBundleManifest != null; } }
-
+        /// <summary>
+        /// 正在下载或准备下载中
+        /// </summary>
         public static bool isDownloading { get { return m_DownloadingOperations != null && m_DownloadingOperations.Count > 0; } }
 
         /// <summary>
@@ -430,7 +435,17 @@ namespace PBCore.AssetBundleUtil
         private float m_FinishedProgress = 0;
         //正在下载的进度和
         private float m_DownloadingProgress = 0;
-        private bool m_Downloading = false;
+        private bool m_IsProgressing = false;
+        public static bool isProgressing
+        {
+            get
+            {
+                if (IsIns)
+                    return Ins.m_IsProgressing;
+                else
+                    return false;
+            }
+        }
 
         private void Update()
         {
@@ -442,12 +457,13 @@ namespace PBCore.AssetBundleUtil
             UpdateProgress();
         }
 
+
         private void CheckProgressStartOrFinish()
         {
             //开始下载
-            if (isDownloading && !m_Downloading)
+            if (isDownloading && !m_IsProgressing)
             {
-                m_Downloading = true;
+                m_IsProgressing = true;
 
                 //重置进度
                 m_FinishedProgress = 0;
@@ -458,9 +474,9 @@ namespace PBCore.AssetBundleUtil
                     onStartDownload.Invoke();
             }
             //结束下载
-            else if (!isDownloading && m_Downloading)
+            else if (!isDownloading && m_IsProgressing)
             {
-                m_Downloading = false;
+                m_IsProgressing = false;
 
                 //设置进度为1
                 m_Progress = 1;
@@ -473,14 +489,16 @@ namespace PBCore.AssetBundleUtil
         private void UpdateProgress()
         {
             //当正在下载时更新progress
-            if (m_Downloading)
+            if (m_IsProgressing)
             {
                 m_DownloadingProgress = 0;
                 for (int i = 0; i < m_DownloadingOperations.Count; i++)
                 {
                     m_DownloadingProgress += m_DownloadingOperations[i].progress;
                 }
-                float totalProgress = m_FinishedProgress + m_InProgressLoadOpertaions.Count;
+                if (m_DownloadingProgress < 0)
+                    m_DownloadingProgress = 0;
+                float totalProgress = m_FinishedProgress + m_DownloadingOperations.Count;
                 float totalDownloadingProgress = m_FinishedProgress + m_DownloadingProgress;
                 if (totalProgress == 0)
                     m_Progress = 1;
