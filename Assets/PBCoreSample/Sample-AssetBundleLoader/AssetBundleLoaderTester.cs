@@ -59,6 +59,10 @@ namespace PBCore.AssetBundleUtil {
         private void UpdateProgress()
         {
             textDownloadProgress.text = "Progress: " + (AssetBundleLoader.downloadProgress * 100f).ToString("F2") + "%";
+            if (AssetBundleLoader.isProgressing)
+            {
+                Debug.Log(AssetBundleLoader.downloadProgress);
+            }
         }
 
         private void UpdateCache()
