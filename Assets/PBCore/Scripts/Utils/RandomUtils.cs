@@ -110,7 +110,10 @@ namespace PBCore
             for (int i = 0; i < count - 1; i++)
             {
                 int index = startIndex + Range(0, count - i);
-                CommonUtils.ExChange(array[index], array[startIndex + count - 1 - i]);
+                int exIndex = startIndex + count - 1 - i;
+                T temp = array[index];
+                array[index] = array[exIndex];
+                array[exIndex] = temp;
             }
         }
 

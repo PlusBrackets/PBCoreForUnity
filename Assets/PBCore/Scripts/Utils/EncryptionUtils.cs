@@ -39,7 +39,7 @@ namespace PBCore
         {
             RijndaelManaged rjdl = InitRijndael(pw, salt);
             ICryptoTransform encryptor = rjdl.CreateEncryptor();
-            byte[] srcBytes = Encoding.ASCII.GetBytes(src);
+            byte[] srcBytes = Encoding.UTF8.GetBytes(src);
             byte[] result = encryptor.TransformFinalBlock(srcBytes, 0, srcBytes.Length);
             encryptor.Dispose();
             return System.Convert.ToBase64String(result, 0, result.Length);
@@ -77,7 +77,7 @@ namespace PBCore
             byte[] srcBytes = System.Convert.FromBase64String(src);
             byte[] result = decryptor.TransformFinalBlock(srcBytes, 0, srcBytes.Length);
             decryptor.Dispose();
-            return ASCIIEncoding.Default.GetString(result);
+            return Encoding.UTF8.GetString(result);
         }
 
         private static RijndaelManaged InitRijndael(string pw, string salt)

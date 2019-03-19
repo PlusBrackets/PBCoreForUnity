@@ -49,12 +49,12 @@ namespace PBCore
             b = temp;
         }
 
-        public static void ExChange<T>(T a, T b)
-        {
-            T temp = a;
-            a = b;
-            b = temp;
-        }
+        //public static void ExChange<T>(T a, T b)
+        //{
+        //    T temp = a;
+        //    a = b;
+        //    b = temp;
+        //}
 
 
         #endregion

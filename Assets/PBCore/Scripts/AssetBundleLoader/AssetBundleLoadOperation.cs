@@ -76,19 +76,31 @@ namespace PBCore.AssetBundleUtil
 
         public AssetBundleDownloadRequest(string assetBundleName, string absoluteRootUrl) : base(assetBundleName, absoluteRootUrl)
         {
+#if UNITY_2018
+            m_request = UnityWebRequestAssetBundle.GetAssetBundle(assetBundleUrl);
+#else
             m_request = UnityWebRequest.GetAssetBundle(assetBundleUrl);
+#endif
             m_request.SendWebRequest();
         }
 
         public AssetBundleDownloadRequest(string assetBundleName, string absoluteRootUrl, Hash128 hash) : base(assetBundleName, absoluteRootUrl)
         {
+#if UNITY_2018
+            m_request = UnityWebRequestAssetBundle.GetAssetBundle(assetBundleUrl, hash, 0);
+#else
             m_request = UnityWebRequest.GetAssetBundle(assetBundleUrl, hash, 0);
+#endif
             m_request.SendWebRequest();
         }
 
         public AssetBundleDownloadRequest(string assetBundleName, string absoluteRootUrl, uint version) : base(assetBundleName, absoluteRootUrl)
         {
+#if UNITY_2018
+            m_request = UnityWebRequestAssetBundle.GetAssetBundle(assetBundleUrl, version, 0);
+#else
             m_request = UnityWebRequest.GetAssetBundle(assetBundleUrl, version, 0);
+#endif
             m_request.SendWebRequest();
         }
 

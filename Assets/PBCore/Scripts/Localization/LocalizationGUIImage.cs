@@ -12,7 +12,7 @@ namespace PBCore.Localization
     {
         private Image m_Image;
         public LocalGroupImage m_localGroupImage;
-        private static Sprite nullSprite = new Sprite();
+        private static Sprite nullSprite = null;
 
         private void Awake()
         {
