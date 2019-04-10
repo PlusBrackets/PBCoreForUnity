@@ -13,15 +13,18 @@ namespace PBCore.Scenario
     [CreateAssetMenu(menuName ="PBCore/Scenario/Command/MessageCommand",fileName ="MessageCommand")]
     public class MessageCommand : ScenarioCommand
     {
-        public class EventMessage : EventArgs
+        public class EventMessage : EventObject
         {
             public string message;
             public EventMessage(string message) { this.message = message; }
         }
 
+        private readonly static EventMessage DEFAULT_EVENT = new EventMessage("");
+
         public override IEnumerator DoCommand(string message)
         {
-            EventManager.Dispatch(new EventMessage(message));
+            DEFAULT_EVENT.message = message;
+            EventManager.Dispatch(DEFAULT_EVENT);
             yield break ;
         }
 

@@ -9,7 +9,8 @@ namespace PBCore.Aid
 {
     #region Event
 
-    public abstract class EventTrigger : EventArgs
+    [Obsolete]
+    public abstract class EventTrigger : EventObject
     {
         public Transform transform;
         public Collider other;
@@ -23,6 +24,7 @@ namespace PBCore.Aid
         }
     }
 
+    [Obsolete]
     /// <summary>
     /// 一个进入Trigger的事件
     /// </summary>
@@ -33,6 +35,7 @@ namespace PBCore.Aid
         }
     }
 
+    [Obsolete]
     /// <summary>
     /// 一个离开Trigger的事件
     /// </summary>
@@ -43,6 +46,7 @@ namespace PBCore.Aid
         }
     }
 
+    [Obsolete]
     /// <summary>
     /// 一个留在Trigger里的事件
     /// </summary>
@@ -53,7 +57,8 @@ namespace PBCore.Aid
         }
     }
 
-    public abstract class EventTrigger2D : EventArgs
+    [Obsolete]
+    public abstract class EventTrigger2D : EventObject
     {
         public Transform transform;
         public Collider2D other;
@@ -66,6 +71,7 @@ namespace PBCore.Aid
         }
     }
 
+    [Obsolete]
     public sealed class EventTriggerEnter2D : EventTrigger2D
     {
         public EventTriggerEnter2D(Transform transform, Collider2D other, string message) : base(transform, other, message)
@@ -73,6 +79,7 @@ namespace PBCore.Aid
         }
     }
 
+    [Obsolete]
     public sealed class EventTriggerExit2D : EventTrigger2D
     {
         public EventTriggerExit2D(Transform transform, Collider2D other, string message) : base(transform, other, message)
@@ -80,6 +87,7 @@ namespace PBCore.Aid
         }
     }
 
+    [Obsolete]
     public sealed class EventTriggerStay2D : EventTrigger2D
     {
         public EventTriggerStay2D(Transform transform, Collider2D other, string message) : base(transform, other, message)
@@ -89,6 +97,7 @@ namespace PBCore.Aid
 
     #endregion
 
+    [Obsolete]
     /// <summary>
     /// 发送trigger的事件
     /// </summary>

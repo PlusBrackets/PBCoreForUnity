@@ -12,16 +12,20 @@ namespace PBCore.Scenario
     [CreateAssetMenu(menuName = "PBCore/Scenario/Action/MessageAction", fileName = "MessageAction")]
     public class MessageAction : ScenarioAction
     {
-        public class EventMessage : EventArgs
+        public class EventMessage : EventObject
         {
             public string message;
             public EventMessage(string message) { this.message = message; }
         }
+
+        private readonly static EventMessage DEFAULT_EVENT = new EventMessage("");
+
         public string message;
 
         public override void DoAction()
         {
-            EventManager.Dispatch(new EventMessage(message));
+            DEFAULT_EVENT.message = message;
+            EventManager.Dispatch(DEFAULT_EVENT);
         }
     }
 }

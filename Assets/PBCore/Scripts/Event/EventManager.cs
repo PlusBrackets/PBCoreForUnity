@@ -10,7 +10,7 @@ namespace PBCore.Event
     /// </summary>
     public sealed class EventManager : SingleClass<EventManager>
     {
-        public delegate void EventDelegate<T>(T e) where T : EventArgs;
+        public delegate void EventDelegate<T>(T e) where T : EventObject;
 
         readonly Dictionary<Type, Delegate> _delegates = new Dictionary<Type, Delegate>();
 
@@ -19,7 +19,7 @@ namespace PBCore.Event
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="listener"></param>
-        public static void AddListener<T>(EventDelegate<T> listener) where T : EventArgs
+        public static void AddListener<T>(EventDelegate<T> listener) where T : EventObject
         {
             Ins.AddListenerInternal(listener);
         }
@@ -29,7 +29,7 @@ namespace PBCore.Event
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="listener"></param>
-        public static void RemoveListener<T>(EventDelegate<T> listener) where T : EventArgs
+        public static void RemoveListener<T>(EventDelegate<T> listener) where T : EventObject
         {
             if (!IsIns)
                 return;
@@ -41,13 +41,13 @@ namespace PBCore.Event
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="e"></param>
-        public static void Dispatch<T>(T e) where T : EventArgs
+        public static void Dispatch<T>(T e) where T : EventObject
         {
             Ins.DispatchInternal(e);
         }
         
         // 添加一个事件
-        private void AddListenerInternal<T>(EventDelegate<T> listener) where T : EventArgs
+        private void AddListenerInternal<T>(EventDelegate<T> listener) where T : EventObject
         {
             Delegate d;
             if (_delegates.TryGetValue(typeof(T), out d))
@@ -61,7 +61,7 @@ namespace PBCore.Event
         }
 
         // 移除一个事件
-        private void RemoveListenerInternal<T>(EventDelegate<T> listener) where T : EventArgs
+        private void RemoveListenerInternal<T>(EventDelegate<T> listener) where T : EventObject
         {
             Delegate d;
             if (_delegates.TryGetValue(typeof(T), out d))
@@ -79,7 +79,7 @@ namespace PBCore.Event
         }
 
         // 触发事件
-        private void DispatchInternal<T>(T e) where T : EventArgs
+        private void DispatchInternal<T>(T e) where T : EventObject
         {
             if (e != null)
             {
